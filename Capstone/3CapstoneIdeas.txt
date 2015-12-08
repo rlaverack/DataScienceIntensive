@@ -1,0 +1,33 @@
+What patterns lead to violent days in Chicago?
+
+  Data Sets to be used:
+  Chicago Crime Data
+  Twitter Data
+  Weather Data
+  Chicago 311 Requests
+
+  - Analyze crime data to find violent periods, find which classification would work best
+  - Mine Twitter activity the day before to see if the neighborhood is stressed
+  - Find weather patterns between the days
+  - See if there are signs that authorities can use as a warning
+
+What hills are more suseptable to landslides?
+
+  Data sets to be used:
+  2001, 2006, 2011 USGS Land Coverage Maps
+  Weather Underground Precipitation Data
+  ESA Soil Moisture Data
+
+  - Find landslides occuring between 2001 and 2015
+  - Find weather a moisture data before each incident
+  - Compare land coverage, slope, and water conditions of each landslide to find danger areas
+
+
+Will increasing food access improve health?
+
+  Datasets to be used:
+  - Food access research atlas
+  - Health data by county
+
+  - Try to find links between health problems and easy access to food
+  - It would be nice if there was a way to track communities which increased access over time to find links
