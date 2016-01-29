@@ -8,8 +8,7 @@ from urllib import urlopen
 import json
 
 #Load csv into Dataframe
-landslides = pd.read_csv('landslide_short.csv')
-print(list(landslides))
+landslides = pd.read_csv('NOSLIDE_LIST.csv')
 #Convert Date column to datetime
 landslides['DATE'] = pd.to_datetime(landslides['DATE'])
 
@@ -105,9 +104,6 @@ for lat, lon, day in zip(landslides['Lat'],landslides['Long'],landslides['DATE']
         date = str(day.year)+str(day.month)+'0'+str(day.day)
     else:
         date = str(day.year)+str(day.month)+str(day.day)
-    print(date)
-    print(lat)
-    print(lon)
     #get json data for the day and time from weather underground
     f = urlopen('http://api.wunderground.com/api/a84d24bae894ca8e/history_{2}/geolookup/q/{0},{1}.json'.format(str(lat),str(lon),str(date)))
     json_string = f.read()
@@ -119,7 +115,7 @@ for lat, lon, day in zip(landslides['Lat'],landslides['Long'],landslides['DATE']
     weather = pd.concat(frames,ignore_index=True)
     f.close()
     if i % 100 == 0:
-        weather.to_csv('weather_40.csv')
+        weather.to_csv('weather_temp.csv'.format(i))
         print(i)
     #pause code to allow only 10 calls per minute (per api key requirements)
     time.sleep(0.6)
@@ -128,6 +124,6 @@ print('End of Collection')
 #add weather dataframe onto landslides dataframe
 #lands = [landslides,weather]
 #landslides = pd.concat(lands,axis=1)
-weather.to_csv('weather_40.csv')
+weather.to_csv('weather.csv')
 #save dataframe to csv
 #landslides.to_csv('landslides_weather.csv')
